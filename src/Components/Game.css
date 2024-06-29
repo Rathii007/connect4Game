@@ -1,0 +1,155 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.header {
+  margin-bottom: 0px;
+}
+
+.header-text {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.footer {
+  margin-bottom: 0px;
+}
+
+.btn {
+  width: 200px;
+  padding: 20px 20px;
+  font-size: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 400px;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.gameCircle {
+  width: 80px;
+  height: 80px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #ddd;
+  transition: background-color 0.3s,
+    transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth transition */
+}
+
+.gameCircle:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.player_0 {
+  background-color: #ddd;
+}
+
+.player_1 {
+  background-color: #ff4d4d; /* Red for Player 1 */
+}
+
+.player_2 {
+  background-color: #4d4dff; /* Blue for Player 2 */
+}
+
+.celebrate {
+  animation: celebrate 1s infinite;
+}
+.start-container {
+  background-image: url("../assets/title.png") no-repeat fixed center;
+  background-size: cover;
+}
+
+.start-button {
+  background-color: #4caf50; /* Green background */
+  border: none;
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100px;
+  margin: 300px 2px;
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.star-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+  .gameBoard {
+    max-width: 300px; /* Example smaller width for smaller screens */
+  }
+
+  .gameCircle {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 160px;
+    padding: 15px 15px;
+    font-size: 16px;
+  }
+}
+@keyframes celebrate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
+}
